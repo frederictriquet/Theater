@@ -1,3 +1,7 @@
+<script>
+    import { base } from '$app/paths';
+</script>
+
 <div class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-6">Markdown Viewer</h1>
     <div class="prose prose-lg">
@@ -6,11 +10,11 @@
         <h2 class="text-2xl font-semibold mt-8 mb-4">Sample Pages</h2>
         <ul class="space-y-3">
             <li>
-                <a href="/welcome" class="text-blue-600 hover:text-blue-800">📝 Basic Markdown Example</a>
+                <a href="{base}/welcome" class="text-blue-600 hover:text-blue-800">📝 Basic Markdown Example</a>
                 <p class="text-gray-600">A simple example showing basic markdown syntax</p>
             </li>
             <li>
-                <a href="/features" class="text-blue-600 hover:text-blue-800">✨ Enhanced Features</a>
+                <a href="{base}/features" class="text-blue-600 hover:text-blue-800">✨ Enhanced Features</a>
                 <p class="text-gray-600">Demonstrates syntax highlighting, smart typography, and more</p>
             </li>
         </ul>
