@@ -1,11 +1,9 @@
-// Force static prerendering
+// This tells SvelteKit to prerender all pages at build time
 export const prerender = true;
-export const trailingSlash = 'always';
 
-// Handle path segments relative to the base
-export const load = async ({ url }) => {
+// This is required for GitHub Pages - it ensures we get correct paths
+export const load = ({ url }) => {
     return {
-        pathname: url.pathname,
-        isIndex: url.pathname === '/' || url.pathname === ''
+        pathname: url.pathname
     };
 };

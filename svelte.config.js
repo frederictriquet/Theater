@@ -27,21 +27,21 @@ const config = {
 	],
 
 	kit: {
-		// adapter-static is the best choice for deploying to GitHub Pages
 		adapter: adapter({
-			fallback: 'index.html' // This ensures proper SPA routing
+			pages: 'build',
+			assets: 'build',
+			fallback: null,
+			precompress: false,
+			strict: true
 		}),
 		paths: {
-			base: process.env.BASE_PATH || '',
-			relative: false
+			base: '/Theater'
 		},
+		appDir: '_app',
 		prerender: {
 			handleHttpError: 'warn',
-			entries: ['*'],
-			handleMissingId: 'warn'
-		},
-		alias: {
-			$lib: './src/lib'
+			handleMissingId: 'ignore',
+			entries: ['*']
 		}
 	}
 };

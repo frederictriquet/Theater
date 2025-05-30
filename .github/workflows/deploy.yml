@@ -39,11 +39,13 @@ jobs:
       - name: Build
         env:
           NODE_ENV: production
-          # Make sure base path matches your repo name
-          BASE_PATH: '/Theater'
         run: |
           npm run build
-          cp static/.nojekyll build/
+          touch build/.nojekyll
+          # Ensure all static assets are copied
+          rsync -av static/ build/
+          # Create a copy of index.html for SPA routing
+          cp build/index.html build/404.html
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

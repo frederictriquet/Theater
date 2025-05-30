@@ -1,8 +1,10 @@
 <script lang="ts">
 	import '../app.css';
 	import { base } from '$app/paths';
+	import { page } from '$app/stores';
 	
 	let { children } = $props();
+	const currentPath = $derived($page.url.pathname);
 </script>
 
 <div class="min-h-screen bg-gray-50">
@@ -11,13 +13,31 @@
 			<nav>
 				<ul class="flex space-x-4">
 					<li>
-						<a href="{base}/" class="text-blue-600 hover:text-blue-800 font-medium">Home</a>
+						<a 
+							href="{base}/" 
+							class="text-blue-600 hover:text-blue-800 font-medium"
+							class:font-bold={currentPath === `${base}/`}
+						>
+							Home
+						</a>
 					</li>
 					<li>
-						<a href="{base}/welcome/" class="text-blue-600 hover:text-blue-800 font-medium">Sample Markdown</a>
+						<a 
+							href="{base}/welcome" 
+							class="text-blue-600 hover:text-blue-800 font-medium"
+							class:font-bold={currentPath === `${base}/welcome`}
+						>
+							Sample Markdown
+						</a>
 					</li>
 					<li>
-						<a href="{base}/features/" class="text-blue-600 hover:text-blue-800 font-medium">Features</a>
+						<a 
+							href="{base}/features" 
+							class="text-blue-600 hover:text-blue-800 font-medium"
+							class:font-bold={currentPath === `${base}/features`}
+						>
+							Features
+						</a>
 					</li>
 				</ul>
 			</nav>
