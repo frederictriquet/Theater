@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-
+	import { base } from '$app/paths';
+	
 	let { children } = $props();
 </script>
 
@@ -10,10 +11,13 @@
 			<nav>
 				<ul class="flex space-x-4">
 					<li>
-						<a href="/" class="text-blue-600 hover:text-blue-800 font-medium">Home</a>
+						<a href="{base}/" class="text-blue-600 hover:text-blue-800 font-medium">Home</a>
 					</li>
 					<li>
-						<a href="/welcome" class="text-blue-600 hover:text-blue-800 font-medium">Sample Markdown</a>
+						<a href="{base}/welcome/" class="text-blue-600 hover:text-blue-800 font-medium">Sample Markdown</a>
+					</li>
+					<li>
+						<a href="{base}/features/" class="text-blue-600 hover:text-blue-800 font-medium">Features</a>
 					</li>
 				</ul>
 			</nav>
