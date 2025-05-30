@@ -28,14 +28,20 @@ const config = {
 
 	kit: {
 		// adapter-static is the best choice for deploying to GitHub Pages
-		adapter: adapter(),
+		adapter: adapter({
+			fallback: 'index.html' // This ensures proper SPA routing
+		}),
 		paths: {
 			base: process.env.BASE_PATH || '',
 			relative: false
 		},
 		prerender: {
 			handleHttpError: 'warn',
-			entries: ['*']
+			entries: ['*'],
+			handleMissingId: 'warn'
+		},
+		alias: {
+			$lib: './src/lib'
 		}
 	}
 };
