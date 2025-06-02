@@ -31,6 +31,52 @@ fibs = [fibonacci(i) for i in range(10)]
 print(fibs)
 ```
 
+## Syntax Highlighting Test
+
+Let's test the syntax highlighting with different languages:
+
+```typescript
+// TypeScript example
+interface Config {
+    theme: 'light' | 'dark';
+    features: string[];
+}
+
+const config: Config = {
+    theme: 'dark',
+    features: ['markdown', 'syntax-highlighting']
+};
+```
+
+```svelte
+<!-- Svelte component example -->
+<script lang="ts">
+    let count = 0;
+    
+    function increment() {
+        count += 1;
+    }
+</script>
+
+<button on:click={increment}>
+    Clicked {count} times
+</button>
+```
+
+```css
+/* CSS example */
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+}
+
+.component {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.2s ease;
+}
+```
+
 ## Typography Features
 
 The @tailwindcss/typography plugin provides beautiful typographic defaults. You can see this in action with:
